@@ -1,7 +1,8 @@
 class API
 
     def self.run
-
+        # url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/?rapidapi-key=#{api_key}/cards"
+        # uri = URI(url)
         url = URI("https://omgvamp-hearthstone-v1.p.rapidapi.com/cards")
 
         # response = Net::HTTP.get(uri) #'gets' info from a website.
@@ -15,6 +16,23 @@ class API
 
         response = http.request(request)
         # puts response.read_body
-        hash = JSON.parse(response.read_body) #turns string into JSON. "hash" {...} 
+        hash = JSON.parse(response.read_body) #turns string into JSON. "hash" {...} hash with the key of basic. which points to 3 arrays for value.
+        array_of_sets = hash.keys
+        array_of_sets.each do |set|
+            card_set_instance = CardSet.new(name: set) #List of all set names.
+        end 
+
+        hash.each do |key, deck|
+            if deck.kind_of?(Array) # Makes sure it is an array we are getting before iterating
+                deck.each do |card| # Iterate over the deck
+                    card_instance = Cards.new(name: card["name"], text: card["text"])
+                    card_instance.cost = card["cost"]
+                    card_instance.attack = card["attack"]
+                    card_instance.health = card["health"]
+                    card_instance.img = card["img"]
+                end
+            end
+        end
+
     end
 end
