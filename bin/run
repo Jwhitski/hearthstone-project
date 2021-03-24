@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require 'dotenv/load'
+
+require_relative "../environment.rb"
+
+cli_instance = CLI.new
+cli_instance.run
