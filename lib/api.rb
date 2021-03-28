@@ -16,7 +16,7 @@ class API
 
         puts 'Loading card data...'.colorize(:blue)
 
-        response = http.request(request) 
+        response = http.request(request)
 
         # puts response.read_body
         JSON.parse(response.read_body) #turns string into JSON. "hash" {...} 
