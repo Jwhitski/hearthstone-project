@@ -23,8 +23,8 @@ class Card
         
         
         puts "Cost: #{@cost}".colorize(:blue) 
-        puts "Attack: #{@attack}".colorize(:red)
-        puts "Health: #{@health}".colorize(:yellow)
+        puts "Attack: #{@attack}".colorize(:yellow)
+        puts "Health: #{@health}".colorize(:red)
         puts "Image: #{@img}"
         puts "Note: Not all cards will have all attributes."
     end
