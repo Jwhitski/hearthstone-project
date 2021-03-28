@@ -4,64 +4,42 @@ class CLI
 
     def run 
         puts "Greetings, Traveler! Welcome to the Hearthstone info booth!"
-        API.run
+        @sets = Array.new
+        api_data = API.run
+        api_data.each do |set, card_data|
+            @sets.push(Set.new(set, card_data))
+        end
         self.menu_set
     end
 
     def menu_set
         puts "Which card set would you like to explore?"
-        puts "(Type the number corresponding to the set you would like to view)."
         self.card_set_list
-        self.pick_set
         
     end
 
-    def pick_set
-        index = gets.to_i - 1
-        list_size = CardSet.all.length - 1
-        while index.negative? || index > list_size
-            puts "Woah! You're in uncharted waters, please select one of our current sets!"
-            index = gets.to_i - 1
+    def card_set_list #displays the sets... indexed 1-34
+        @sets.each.with_index(1) do |set, index|
+            puts "#{index}. #{set.get_name}"
         end
-        current_card_set = CardSet.all[index] #returns instance of cardset
 
-        self.card_set_details(current_card_set)
+        puts "Type the number corresponding to the set you would like to view:"
+        set_input = gets.to_i #user selects their card... if user selects 1.
+
+        puts "Here are the cards for that set"
+        @chosen_set = @sets[set_input - 1]
+        @chosen_set.list_cards
+        
+        self.menu_card
     end
+
+    def menu_card
+        puts "Which card would you like to see from #{@chosen_set.get_name}?"
+        card_input = gets.to_i
+        @chosen_card = @chosen_set.get_card(card_input)
+        @chosen_card.show
+    end
+
+
     
-    def card_set_details(selected_set)
-        [selected_set.name][0...100]
-        binding.pry
-    end
-
-    def card_set_list
-        CardSet.all.each.with_index(1) do |card_set, index|
-        # binding.pry
-        puts "#{index}. #{card_set.name}"
-        end  
-    end
-
-
-    # def menu_cards
-
-    # end
-
-    # def pick_card
-    #     index = gets.to_i - 1
-    #     list_size = Cards.all.length - 1
-    #     while index.negative? || index > list_size
-    #         puts "Woah! You're in uncharted waters, please select one of our current sets!"
-    #         index = gets.to_i - 1
-    #     end
-
-    # end
-
 end
-
-#if key is selected "Madness At The Darkmoon Faire", we want it to display the values...aka the cards in that set. 
-
-#how do you select a value of a key? you type [key][value]?
-
-#the key is a string.. we need to make that string a key
-
-#we need our program to iterate over all the options, and match it with the input from our user... then put that input in as the key and getting the values..
-
