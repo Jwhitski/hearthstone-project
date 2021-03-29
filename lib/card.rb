@@ -26,6 +26,6 @@ class Card
         puts "Attack: #{@attack}".colorize(:yellow)
         puts "Health: #{@health}".colorize(:red)
         puts "Image: #{@img}"
-        puts "Note: Not all cards will have all attributes."
+        puts "Note: Not all cards will have all attributes.".colorize(:light_blue)
     end
 end
