@@ -8,7 +8,7 @@ When you run the program, it will display a list of card sets that were released
 
 <h2>Installation<h2>
 
-<p> In order for you to use the API, you will need an API Key. You can create an account at <a href= https://rapidapi.com/omgvamp/api/hearthstone></a> to have access to an API key. </p>
+<p> In order for you to use the API, you will need an API Key. You can create an account at <a href= https://rapidapi.com/omgvamp/api/hearthstone>rapidapi.com</a> to have access to an API key. </p>
 
 <p> You can punch in the API key in the api.rb file </p>
 
