@@ -28,7 +28,8 @@ class CLI
 
         puts "Here are the cards for that set"
         @chosen_set = @sets[set_input - 1] #stores selection
-        @chosen_set.list_cards #Set.list_cards
+        @chosen_set.list_cards #Set.list_cards / stores @sets[index].list_cards 
+        #chooses the key to retrieve values (cards)
         
         self.menu_card
     end
