@@ -8,7 +8,7 @@ When you run the program, it will display a list of card sets that were released
 
 <h2>Installation<h2>
 
-<p> In order for you to use the API, you will need an API Key. you can create an account at <a href= https://rapidapi.com/omgvamp/api/hearthstone </a> to  have access to an API key. </p>
+<p> In order for you to use the API, you will need an API Key. You can create an account at <a href= https://rapidapi.com/omgvamp/api/hearthstone></a> to have access to an API key. </p>
 
 <p> You can punch in the API key in the api.rb file </p>
 
@@ -32,7 +32,7 @@ After, another list will display with all the cards in the chosen card set, and 
 
 <h2> Contributing <h2>
 
-<p> Bug reports and pull requests are welcome on GitHub at <a href= https://github.com/Jwhitski/hearthstone-project </a>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the <a href= https://github.com/Jwhitski/hearthstone-project/blob/main/CODE_OF_CONDUCT.md>code of conduct</a>. </p>
+<p> Bug reports and pull requests are welcome on GitHub at <a href= https://github.com/Jwhitski/hearthstone-project></a>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the <a href= https://github.com/Jwhitski/hearthstone-project/blob/main/CODE_OF_CONDUCT.md>code of conduct</a>. </p>
 
 <h2>License<h2>
 
