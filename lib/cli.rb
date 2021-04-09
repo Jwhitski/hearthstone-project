@@ -26,7 +26,7 @@ class CLI
 
         puts "Type the number corresponding to the set you would like to view:"
         set_input = gets.to_i #user selects their card... if user selects 1.
-        while set_input < 0 || set_input > @sets.length
+        while set_input <= 0 || set_input > @sets.length
             puts "That is not a valid selection, please try again."
             set_input = gets.to_i
         end

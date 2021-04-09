@@ -18,11 +18,17 @@ class Set
     def list_cards #@chosen_set.list_cards -- takes the key called and lists cards for that key
         @cards.each.with_index(1) do |card, index| #goes through each card instance and grabs names
             puts "#{index}. #{card.get_name}"
+            
         end
     end
 
     def get_card(index)
+        while index <= 0 || index > @cards.length
+            puts "That is not a valid selection, please try again."
+            index = gets.to_i
+        end
         @cards[index - 1]
+        
     end
 
 
